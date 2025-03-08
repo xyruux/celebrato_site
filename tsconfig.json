@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",           // This is crucial for resolving the `@` alias
+    "paths": {
+      "@/*": ["*"]                // Alias configuration to resolve `@`
+    },
+    "target": "ES2020",                   // More stable for production environments
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "strict": false,                        // Enables stricter type checking for better stability
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["vite/client", "vuetify"],
+    "lib": ["ESNext", "DOM"],
+    "allowJs": false,                      // Ensures TypeScript files only, for cleaner builds
+    "noEmit": false,                       // Enables emitting compiled files (important for deployment)
+    "noEmitOnError": false,                 // Stops build on errors, preventing broken deployments
+    "jsx": "preserve",
+    "outDir": "dist",                      // Ensures compiled files go to the `dist` directory
+    "forceConsistentCasingInFileNames": true, // Prevents issues on case-sensitive file systems
+    "useDefineForClassFields": true,       // Ensures class field behavior matches ESNext standards
+    "allowSyntheticDefaultImports": true   // Avoids module import issues
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist"]      // Excludes `dist` to prevent build conflicts
+}
